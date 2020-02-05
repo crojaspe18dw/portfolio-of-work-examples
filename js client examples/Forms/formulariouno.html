@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>formulario 1</title>
+</head>
+<body>
+
+	<h1>recogida y procesamiento de datos de un formulario</h1>
+
+	<form>
+		<label>nombre del cliente: </label><input type="text" name="nombre" id="nombre"></br></br>
+		<label>material de la caja: </label><select size="1" name="material" id=list>
+												<option value="madera" id="lista">madera</option>
+												<option value="marmol" id="lista">marmol</option>
+												<option value="hierro" id="lista">hierro</option>
+												<option value="cuero" id="lista">cuero</option>
+												<option value="cristal" id="lista">cristal</option>
+												<option value="plastico" id="lista">plastico</option>
+											</select></br></br>
+		
+		<label>seleccione una dimencion para la caja: </label></br></br>
+
+		<input type="radio" value="diminuta" name="tamano"><label>Diminuta</label><br>
+		<input type="radio" value="mediano" name="tamano"><label>Mediano</label><br>
+		<input type="radio" value="grande" name="tamano"><label>Grande</label><br></br>
+
+		<label>comentarios:</label></br></br>
+
+		<textarea type="text" id="comentario" style="width: 180px; height: 180px;"></textarea><br></br>
+
+		<input type="button" name="enviar" onclick="boton()" value="ver seleccion">
+		<br></br><br></br><br></br>
+
+
+		<div id="div" style="width: 50%; height: 200px; border: 1px solid black; ">
+			<p id="p"></p>
+		</div>
+
+		<br></br><br></br><br></br><br></br>
+
+		<script type="text/javascript">
+			//declaracion de las variables que cogen y guardan los valores de los inputs del formulario
+			var dnombre=document.getElementById("nombre");
+			var dmaterial=document.getElementById("list");
+			var dcaja=document.querySelectorAll("input[type='radio']");                                          
+			var dcomentario=document.getElementById("comentario");
+			var pp=document.getElementById("p");
+			
+
+
+			//funcion que devuelve el resulatado cuando le da al boton ver seleccion
+			function boton(){
+				var am="a";
+			//un for para dar a una variable el valor de lista
+            for(i=0;i<dcaja.length;i++){
+                if(dcaja[i].checked==true){
+                dcaja= dcaja[i].value;
+            	}
+            	
+            }
+
+        
+
+				
+				pp.innerHTML="<P>el cliente es "+ dnombre.value +", el material de la caja es "+ dmaterial.value +", la dimencion de la caja es "+ dcaja +" y el comentario es "+ dcomentario.value +"</P>";
+				
+
+
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+		</script>
+
+
+
+
+	</form>
+
+
+
+</body>
+</html>

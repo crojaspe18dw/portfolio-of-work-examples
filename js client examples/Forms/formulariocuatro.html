@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>recibo con los datos de un pedido</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body{
+			background-image: url(mesa.jpg);
+			background-size: 100vw 100vh;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+		}
+		form{
+			border: 1px solid black;
+			background-color: grey;
+			margin: 5% auto;
+			width: 20%;
+			padding: 20px 100px;
+		}
+		div{
+			width: 20%;
+			margin: 5% auto ;
+			border: 1px solid black;
+			background-color: white;
+			padding: 10px 10px;
+		}
+		h1{
+			border-bottom: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<h3>producto:</h3>
+		<select  id="listauno" size="1">
+			<option>martillo</option>
+			<option>pala</option>
+			<option>semento</option>
+			<option>clavos</option>
+			<option>madera</option>
+			<option>escaleras</option>
+			<option>grua</option>
+		</select>
+
+
+		<h3>cantidad: </h3>
+		<input type="number" name="cantidad" id="cantidad">
+
+		<h3>direccion:</h3>
+		<h4>ciudad:</h4><input type="text" name="ciudad" id="ciudad">
+		<h4>codigo postal: </h4><input type="number" name="cp" id="cp">
+
+		<h4>nombre de </h4>
+		<input type="text" name="ncalle" id="ncalle">
+		<select id="a" size="1">
+			<option> calle</option>
+			<option> paseo</option>
+			<option> avenida</option>
+			<option> bulevar</option>
+		</select>
+		<h4>numero y puerta</h4><input type="text" name="nyp" id="nyp"><br>
+
+		<h4>imprimir al finalizar: </h4>
+		<p>si    <input type="radio" name="boton" value="si"></p><p> no   <input type="radio" name="boton" value="no"></p><br><br>
+
+		<input type="button" name="boton" onclick="funcion()" value="enviar">
+	</form>
+	<div>
+		<h1>tiket</h1><br>
+		<p>producto: <label id="uno"></label></p><br>
+		<p>cantidad: <label id="dos"></label></p><br>
+		<h3>direccion: </h3>
+		<p>ciudad: <label id="tres"></label></p>
+		<p>codigo postal: <label id="cuatro"></label></p>
+		<p>nombre calle: <label id="cinco"></label><label id="seis"></label></p>
+		<p>numero y puerta: <label id="siete"></label></p>
+		<p>imprimir tiket al finalizar: <label id="ocho"></label></p>
+
+
+
+
+	</div>
+	<script type="text/javascript">
+		
+		//declaracion de las variables que van a coger los valores del formulario
+		var listauno=document.getElementById("listauno");
+		var cantidad=document.getElementById("cantidad");
+		var ciudad=document.getElementById("ciudad");
+		var cp=document.getElementById("cp");
+		var nombrecalle=document.getElementById("ncalle");
+		var tipocalle=document.getElementById("a");
+		var numypuer=document.getElementById("nyp");
+		var siono=document.querySelectorAll("input[type='radio']")
+		var uno=document.getElementById("uno");
+		var dos=document.getElementById("dos");
+		var tres=document.getElementById("tres");
+		var cuatro=document.getElementById("cuatro");
+		var cinco=document.getElementById("cinco");
+		var seis=document.getElementById("seis");
+		var siete=document.getElementById("siete");
+		var ocho=document.getElementById("ocho");
+
+
+		function funcion(){
+			//escribir en el tique la informacion que se ha introducido en el formulario
+			uno.innerHTML=listauno.value;
+			dos.innerHTML=cantidad.value;
+			tres.innerHTML=ciudad.value;
+			cuatro.innerHTML=cp.value;
+			cinco.innerHTML=nombrecalle.value;
+			seis.innerHTML=tipocalle.value;
+			siete.innerHTML=numypuer.value;
+
+
+
+			//ifs para saber si quiere imprimir el tiket o no comprobando que radio le ha dado
+			if (siono[0].checked) {
+				ocho.innerHTML="si";
+			}else if(siono[1].checked){
+				ocho.innerHTML="no";
+			}
+			else
+				ocho.innerHTML="como no ha elegido opcion el tiket no se imprimira";
+			
+		}
+	</script>	
+</body>
+</html>

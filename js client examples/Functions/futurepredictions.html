@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script type="text/javascript">
+
+
+		//funcion que devuelve en nombre, apellido, hijos que tendra y ciudad donde vivira 
+		function primera(nombre,apellido){
+				vueltasdelbucle++;
+				hijos=Math.floor(Math.random() *11);
+				i=Math.floor(Math.random() *11);
+
+				r='hola '+nombre+' '+apellido+' vas a tener '+hijos+' hijos y viviras en la ciudad de '+ciudades[i];
+				return r;
+
+		}
+
+
+		//declaracion de las variables
+		var nombre=prompt('','escriba su nombre');
+		var apellido=prompt('','escriba su apellido');
+		var hijos;
+		var i,r;
+		var vueltasdelbucle=0;
+
+		//arraylis que tendra las ciudades donde puede vivir
+		var ciudades=['Sanse','Irun','Madrid','Barcelona','Orio','Pamplona','Bilbao','Valencia','Almeria','Vitoria'];
+
+
+		//bucle para que la funcion se ejecute tres veces
+		do{
+		
+
+		//llamada a la funcion con los parametros nombre y apellido
+		primera(nombre,apellido);
+
+
+		//escribe en consola lo que devuelve la funcion
+		console.log(r);
+		
+
+		}while(vueltasdelbucle<3);
+
+	</script>
+
+</body>
+</html>

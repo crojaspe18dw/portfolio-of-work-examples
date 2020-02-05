@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		//funcion cambia los grados de una unidad a otra
+		function convercion(grados,unidad){
+			vueltas++;
+
+			if (unidad == aa) {
+				resultado=(grados*9/5)+32;
+				return resultado;
+
+			}else if (unidad == aaa) {
+				resultado=(grados-32)*5/9;
+				return resultado;
+			}else if (unidad == 0) {
+				resultado=(grados*9/5)+32;
+				return resultado;
+			}else if (unidad==1) {
+				resultado=(grados-32)*5/9;
+				return resultado;
+			}else if (grados!=0 || grados!=1) {
+				resultado="lo que ha introducido no es valido";
+			}
+
+		}
+
+
+		//declaracion de variables
+		var grados=prompt('','introduzca los grados');
+		var unidad=prompt('','introduzca a que unidad los quiere celcius o 1, fahrenheit o 0');
+		var resultado;
+		var vueltas=0;
+		var aa='fahrenheit';
+		var aaa='celcius';
+
+		//asegurando los valores que pasa el usuario
+		grados=parseInt(grados);
+
+
+		//bucle para que se repita el codigo las tres veces
+		do{
+		
+
+		//llamar a la funcion
+		convercion(grados,unidad);
+
+		console.log(resultado);
+
+	}while(vueltas<3);
+
+
+
+	</script>
+
+
+</body>
+</html>

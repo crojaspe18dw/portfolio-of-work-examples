@@ -1,0 +1,122 @@
+Fecha de entrega: 29 sept. 2019 23:59
+Actividad 2 funciones
+85/100
+85 puntos de 100
+Iñigo Aramendi Inchauspe 25 sept. 2019
+8-Ejercicios funciones.pdf
+PDF
+Comentarios de la clase
+Tu trabajo
+Tarea calificada
+ejerciciocinco.html
+HTML
+ejerciciocuatro.html
+HTML
+ejerciciodos.html
+HTML
+ejerciciotres.html
+HTML
+ejerciciouno.html
+HTML
+1 comentario privado
+Iñigo Aramendi Inchauspe12 oct. 2019
+Hola, Andres: para la próxima entrega, trata de comprimir los ejercicios para una mejor descarga de los mismos... En el ejercicio 2, falta el cálculo de la edad de gato a humano.... Por otro lado, ya has empezado a controlar si lo que te introduce el usuario es correcto o no. A modo de mejora, índicale al usuario que ha introducido algo mal y vuelve a pedirle el dato hasta que lo haga bien. Espero esto para el próximo ejercicio!!!!FInalmente, bien comentado y tabulado. Sigue así!!!!!!
+Actividad 2 funciones
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		//ejercicio libre, voy a hacer una funcion que calcula cuanto hay que pagar de IRPF en funcion de los que ganemos al año
+
+
+
+		//funcion que hace el calculo de cuanto tendremos que pagar
+		function ir(mes1,mes2,mes3,mes4,mes5,mes6,mes7,mes8,mes9,mes10,mes11,mes12){
+			vueltasdelbucle++;
+			resultado=mes1+mes2+mes3+mes4+mes5+mes6+mes7+mes8+mes9+mes10+mes11+mes12;
+
+			if (resultado>0 && resultado<12450) {
+				resultado=resultado*19/100;
+				return resultado;
+			}else if (resultado>12450 && resultado<20200) {
+				resultado=resultado*24/100;
+				return resultado;
+			}else if (resultado>20200 && resultado<35200) {
+				resultado=resultado*30/100;
+				return resultado;
+			}else if (resultado>35200 && resultado<60000) {
+				resultado=resultado*37/100;
+				return resultado;
+			}else if (resultado>60000 && resultado<140000) {
+				resultado=resultado*45/100;
+				return resultado;
+			}else if (resultado>140000) {
+				resultado=resultado*52/100;
+				return resultado;
+			}
+
+
+
+		}
+
+
+
+		//declarando las variables que se necesitaran
+		var mes1=prompt('','cuanto has ganado en enero');
+		var mes2=prompt('','cuanto has ganado en febrero');
+		var mes3=prompt('','cuanto has ganado en marzo');
+		var mes4=prompt('','cuanto has ganado en abril');
+		var mes5=prompt('','cuanto has ganado en mayo');
+		var mes6=prompt('','cuanto has ganado en junio');
+		var mes7=prompt('','cuanto has ganado en julio');
+		var mes8=prompt('','cuanto has ganado en agosto');
+		var mes9=prompt('','cuanto has ganado en septiembre');
+		var mes10=prompt('','cuanto has ganado en actubre');
+		var mes11=prompt('','cuanto has ganado en noviembre');
+		var mes12=prompt('','cuanto has ganado en diciembre');
+		var vueltasdelbucle=0;
+		var resultado=0;
+
+
+
+		//asegurar que todos los datos son integer
+		mes1=parseInt(mes1);
+		mes2=parseInt(mes2);
+		mes3=parseInt(mes3);
+		mes4=parseInt(mes4);
+		mes5=parseInt(mes5);
+		mes6=parseInt(mes6);
+		mes7=parseInt(mes7);
+		mes8=parseInt(mes8);
+		mes9=parseInt(mes9);
+		mes10=parseInt(mes10);
+		mes11=parseInt(mes11);
+		mes12=parseInt(mes12);
+
+
+
+		//bucle para que se repita tres veces
+		do{
+
+		//escribir en consola lo que devuelve la funcion
+		console.log(resultado);
+
+
+
+		//llamada a la funcion
+		ir(mes1,mes2,mes3,mes4,mes5,mes6,mes7,mes8,mes9,mes10,mes11,mes12);
+
+
+	}while(vueltasdelbucle<=3);
+
+
+	</script>
+
+
+</body>
+</html>

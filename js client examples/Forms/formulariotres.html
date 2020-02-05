@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ejercicio tres</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body{
+			background-color: #6F5C8F;
+		}
+
+		form{
+			border: 1px solid black;
+			margin: 5% auto;
+			width: 30%;
+			background-color:#BBB7C2;
+			padding: 1% 1% 1% 10%;
+		}
+
+		select{
+			margin: 0.4%;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<h4>elija o escriba las capitales de los siguientes paises</h4><br><br><br>
+
+		<label>españa</label><br>
+
+		<input type="text" id="es"  value="ciudad"><br><br>
+
+
+
+		<label>Francia</label><br>
+
+		<select id="fra" size="1">
+			<option id="fra" value="Madrid">Madrid</option>
+			<option id="fra" value="Barcelona">Barcelona</option>
+			<option id="fra" value="Roma">Roma</option>
+			<option id="fra" value="Paris">Paris</option>			
+		</select><br><br>
+
+
+
+		<label>Italia</label><br>
+
+		
+		<select id="ita" size="1">
+			<option value="Madrid">Madrid</option>
+			<option value="Barcelona">Barcelona</option>
+			<option value="Roma">Roma</option>
+			<option value="Paris">Paris</option>			
+		</select><br><br><br><br>
+
+
+
+		<input type="button" value="i am finished" onclick="formul()">
+
+	</form>
+	<div>
+		<p>aciertos: <label id="aciertos"></label></p>
+		<label id="opinion"></label>
+		<img id="img" src="">
+	</div>
+
+	<script type="text/javascript">
+
+		//declaracion de variables que recogen los datos que el usuario ha metido en el formulario
+		
+		var texes=document.getElementById("es");
+
+		var selfra=document.getElementById("fra");
+
+		var selita=document.getElementById("ita");
+
+		var l=document.getElementById("luno");
+
+		var aciertos=document.getElementById("aciertos");
+
+		var pinion=document.getElementById("opinion");
+
+		var img=document.getElementById("img");
+
+		//declaracion de otras variables que se tendran que utilizar
+		var a=0;
+		var b=0;
+		var c=0;
+		var ciudaduno="madrid";
+		var ciudaddos="Paris";
+		var ciudadtres="Roma";
+
+		var d;
+
+
+		//funcio llamada al clicar sobre i´m finished
+
+		function formul(){
+
+
+
+				if (selfra.value==ciudaddos) {
+					
+						b=1
+					
+				}
+
+				if (selita.value==ciudadtres) {
+						c=1
+				}
+			}
+
+			
+			if (texes.value==ciudaduno) {
+				a=1
+			}
+
+			d=a+b+c;
+
+			if (d=3) {
+				aciertos.innerHTML="3";
+				opinion.innerHTML="GRAN TRABAJO"
+				img.innerHTML="<img src='WIN.jpg'>"
+			}
+			else if (d=2 || d=1) {
+				aciertos.innerHTML="1 o 2";
+				opinion.innerHTML="ESO ESTA BIEN"
+				img.innerHTML="<img src='MEH.jpg'>"
+			}
+			else if (d=0) {
+				aciertos.innerHTML="0";
+				opinion.innerHTML="REALMENTE NECESITAS HACERLO MEJOR"
+				img.innerHTML="<img src='LOSE.jpg'>"
+			}
+
+
+
+
+
+	</script>
+
+</body>
+</html>

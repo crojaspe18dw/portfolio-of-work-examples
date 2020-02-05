@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<script type="module">//ponemos la etiqueta script con type module para que funcione
+		//importamos lo que necesitemos y hayamos exportado de los otros dos archivos
+		import {jugador} from './jugador.js';
+		import {objeto} from './objeto.js';
+		//instanciar jugador
+		var jugadoruno=new jugador(9,9,1);
+		//usamos destructuring para meter los valores de objeto en las variables velocidad, altura, precision
+		var {velocidad, altura, precision}=objeto;
+		//inprimimos en consola las variables anteriore
+		console.log(velocidad +' '+altura+' '+precision);
+		//imprimimos en consola jugador uno utilizando el metodo ver de la clase jugador
+		console.log(jugadoruno.ver);
+		//cambiamos el valor de precision utilizando el metodo cambiar
+		jugadoruno.cambiar=9;
+		//volvemos a imprimir jugadoruno para ver que si ha cambiado la precision
+		console.log(jugadoruno.ver);
+	</script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		formulario tres
+	</title>
+
+	<style type="text/css">
+		body{
+			background-image:url(form.jpg);
+			background-repeat: no-repeat;
+			background-size: 100% 120%;
+		}
+
+		div{
+			margin: 5% auto;
+			padding: 3% 1%;
+			width: 50%;
+			border: 1px solid black;
+			background-color: #5677C2;
+			box-shadow: -30px 20px 25px black;
+			border-radius: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		//formulario con preguntas que tienen las respuestas en botones de tipo radio
+		<form>
+			<h3>cual es la mejor descripcion de una variable</h3>
+			<input type="radio" value="1" name="respuesta"><label>un metodo para unir cadenas</label></br>
+			<input type="radio" value="2" name="respuesta"><label>permite guardar informacion para que pueda ser utilizada en todo el programa</label></br>
+			<input type="radio" value="3" name="respuesta"><label>permite tener una decision basada en una condicion</label></br></br></br>
+
+
+			<h3>cual es la mejor descripcion de la concatenacion</h3>
+			<input type="radio" value="1" name="respuestaa"><label>un metodo para unir cadenas</label></br>
+			<input type="radio" value="2" name="respuestaa"><label>permite guardar informacion para que pueda ser utilizada en todo el programa</label></br>
+			<input type="radio" value="3" name="respuestaa"><label>permite tener una decision basada en una condicion</label></br></br></br>
+
+
+			<h3>cual es la mejor descripcion de la funcion if</h3>
+			<input type="radio" value="1" name="respuestaaa"><label>un metodo para unir cadenas</label></br>
+			<input type="radio" value="2" name="respuestaaa"><label>permite guardar informacion para que pueda ser utilizada en todo el programa</label></br>
+			<input type="radio" value="3" name="respuestaaa"><label>permite tener una decision basada en una condicion</label></br></br></br>
+
+			<input type="button" name="calificacion" onclick="boton()" value="calificacion"></br>
+			<p>tu calificacion es: <label id="cal"></label></p>
+		</form>
+	</div>
+
+
+	<script type="text/javascript">
+		
+		//declarando las variables que necesitare para el ejercicio
+		
+		var h1=document.getElementById("cal");
+
+		var a=0;
+		var b=0;
+		var c=0;
+		var i;
+		var d;
+		var t=0;
+
+
+
+		function boton(){
+
+			//cogiendo los valores de cada radio button 
+			var puno=document.querySelectorAll("input[name='respuesta']");
+			var pdos=document.querySelectorAll("input[name='respuestaa']");
+			var ptres=document.querySelectorAll("input[name='respuestaaa']");
+
+
+			//for para mirar que radios estan seleccionados y asignarselos a una variable
+			for (i =0; i <=2; i++) {
+				if (puno[i].checked==true) {
+					t=parseInt(puno[i].value); //pasando el valor del radio a integer
+
+					// if que si la respuesta es la buena se sume uno a una variable
+					if (t==2) {
+						a=1;
+						
+					}
+				}
+				
+
+
+				t=0;
+
+
+				if (pdos[i].checked==true) {
+					t=parseInt(pdos[i].value);//pasando el valor del radio a integer
+
+					// if que si la respuesta es la buena se sume uno a una variable
+					if (t==1) {
+						b=1;
+					}
+				}
+				
+				t=0;
+
+
+				if (ptres[i].checked==true) {
+					t=parseInt(ptres[i].value);//pasando el valor del radio a integer
+
+					// if que si la respuesta es la buena se sume uno a una variable
+					if (t==3) {
+						c=1;	
+					}
+				}
+
+
+		}
+		d=a+b+c; //suma de las variables se almacenan en la variable d
+
+		
+
+
+		//aqui he puesto varios if que segun lo que tenga la variable d nos muestre un mensaje u otro
+		if (d==3) {
+			h1.innerHTML="¡Eres un profesional de JavaScript!";
+			}else if(d==2){
+				h1.innerHTML="Vas por buen camino.";
+			}else if(d==1){
+				h1.innerHTML="Necesitas estudiar más tiempo. Inténtalo de nuevo.";
+			}else if(d==0){
+				h1.innerHTML="No creo que hayas estudiado.";
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>

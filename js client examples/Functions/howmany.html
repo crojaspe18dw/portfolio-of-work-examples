@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		//funcion que calcula los productos que vas a tomar el resto de tu vida
+		function productos(cafes,hamburguesas,cocacolas,edad){
+			vueltasdelbucle++;
+			añosquevivira=Math.random() * (100 - 90) + 90;
+			añosquequedan=añosquevivira-edad;
+
+
+			//pasando años que quedan a un entero
+			añosquequedan=parseInt(añosquequedan);
+
+
+			//calculo de lo que voy a consumir de cada producto en los años que me quedan por vivir
+			cafes=cafes*añosquequedan;
+			hamburguesas=hamburguesas*añosquequedan;
+			cocacolas=cocacolas*añosquequedan;
+
+
+			resultado='vas a consumir '+cafes+' cafes, '+hamburguesas+' hamburguesas y '+cocacolas+ ' cocacolas';
+
+
+
+			return resultado;
+		}
+
+
+
+
+		//declaracion de variables
+		var cafes=prompt('','escriba los cafes que toma al dia');
+		var hamburguesas=prompt('','escriba las hamburguesas que come al dia');
+		var cocacolas=prompt('','escriba las cocacolas que toma al dia');
+		var añosquequedan=0;
+		var añosquevivira=0;
+		var edad=prompt('','escriba su edad');
+		var vueltasdelbucle=0;
+		var resultado;
+
+
+		//asegurar que los datos ingresados son integer
+		cafes=parseInt(cafes);
+		hamburguesas=parseInt(hamburguesas);
+		cocacolas=parseInt(cocacolas);
+
+		//calcular cuanto toma al año
+		cafes=cafes*365;
+		hamburguesas=hamburguesas*365;
+		cocacolas=cocacolas*365;
+
+
+		//bucle para que se ejecute tres veces la funcion
+		do{
+		
+
+		//llamada a la funcion
+		productos(cafes,hamburguesas,cocacolas,edad);
+
+
+		//escribir lo qe devuelve la funcion en pantalla
+		console.log(resultado);
+		
+
+	}while(vueltasdelbucle<3);
+
+
+
+
+	</script>
+
+</body>
+</html>
